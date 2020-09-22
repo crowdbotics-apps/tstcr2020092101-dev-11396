@@ -16,7 +16,12 @@ export default class Blank extends React.Component {
 
   render = () => (
     <View style={styles.container}>
-      <Text>This is your new component</Text>
+      <Text>Welcome to Crowdbotics</Text>
+      <TextInput style={{ height: 40, borderColor: "gray", borderWidth: 1 }}/>
+      <TextInput style={{ height: 40, borderColor: "gray", borderWidth: 1 }}/>
+      <TouchableOpacity style={styles.button}>
+        <Text>Signup</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -26,4 +31,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 16,
   },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10
+  }
 });
