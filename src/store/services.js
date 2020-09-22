@@ -4,7 +4,7 @@ const signupandLogin = axios.create({
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
 const tstcr2020092101API = axios.create({
-  baseURL: "https://tstcr2020092101-dev-11396-prod.herokuapp.com/",
+  baseURL: "https://tstcr2020092101-dev-11396.botics.co/",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
 function signupandlogin_post_api_v1_login_read(requestBody) {
