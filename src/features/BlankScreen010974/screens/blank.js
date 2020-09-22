@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { signupandlogin_post_api_v1_login_read } from "../../../store/actions.js";
 import {
   View,
   Image,
@@ -8,28 +10,40 @@ import {
   Button,
   Switch,
   TextInput,
-  StyleSheet,
+  StyleSheet
 } from "react-native";
-
-export default class Blank extends React.Component {
-  state = {};
-
+class Blank extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
   render = () => (
     <View style={styles.container}>
       <Text>Welcome to Crowdbotics</Text>
-      <TextInput style={{ height: 40, borderColor: "gray", borderWidth: 1 }}/>
-      <TextInput style={{ height: 40, borderColor: "gray", borderWidth: 1 }}/>
-      <TouchableOpacity style={styles.button}>
+      <TextInput
+        onChange={email => this.setState({ email: email })}
+        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+      />
+      <TextInput
+        onChange={password => this.setState({ password: password })}
+        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+      />
+      <TouchableOpacity
+        style={styles.button}
+        onClick={() => this.props.signup(this.state.email, this.state.password)}
+      >
         <Text>Signup</Text>
       </TouchableOpacity>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 16,
+    marginHorizontal: 16
   },
   button: {
     alignItems: "center",
@@ -37,3 +51,13 @@ const styles = StyleSheet.create({
     padding: 10
   }
 });
+function mapStateToProps(state) {
+  return { state: state };
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    signup: (email, password) =>
+      dispatch(signupandlogin_post_api_v1_login_read(email, password))
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Blank);
