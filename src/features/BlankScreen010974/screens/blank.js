@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { signupandlogin_post_api_v1_login_read } from "../../../store/actions.js";
+import { registrationandlogin_post_api_v1_login_read } from "../../../store/actions.js";
 import {
   View,
   Image,
@@ -33,7 +33,7 @@ class Blank extends React.Component {
       />
       <TouchableOpacity
         style={styles.button}
-        onClick={() => this.props.signup(this.state.email, this.state.password)}
+        onClick={() => this.props.register(this.state.email, this.state.password)}
       >
         <Text>Signup</Text>
       </TouchableOpacity>
@@ -56,8 +56,8 @@ function mapStateToProps(state) {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    signup: (email, password) =>
-      dispatch(signupandlogin_post_api_v1_login_read(email, password))
+    register: (email, password) =>
+      dispatch(registrationandlogin_post_api_v1_login_read(email, password))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Blank);
