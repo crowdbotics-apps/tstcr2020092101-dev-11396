@@ -33,7 +33,7 @@ class Blank extends React.Component {
       />
       <TouchableOpacity
         style={styles.button}
-        onClick={() => this.props.register(this.state.email, this.state.password)}
+        onPress={() => this.props.register(this.state.email, this.state.password)}
       >
         <Text>Signup</Text>
       </TouchableOpacity>
