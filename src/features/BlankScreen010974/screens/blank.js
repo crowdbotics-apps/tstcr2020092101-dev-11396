@@ -22,7 +22,7 @@ class Blank extends React.Component {
   }
   render = () => (
     <View style={styles.container}>
-      <Text>Welcome to Crowdbotics</Text>
+      <Text>Welcome to Your New Crowdbotics Screen</Text>
       <TextInput
         onChange={email => this.setState({ email: email })}
         style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
