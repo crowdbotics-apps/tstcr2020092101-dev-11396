@@ -1,63 +1,63 @@
-import React from "react";
-import { connect } from "react-redux";
-import { registrationandlogin_post_registration_read } from "../../../store/actions.js";
+import React from "react"
+import { View, Image, ImageBackground } from "react-native"
 import {
-  View,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
+  withStyles,
   Text,
   Button,
-  Switch,
-  TextInput,
-  StyleSheet
-} from "react-native";
-class Blank extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: ""
-    };
+  CheckBox,
+  Radio,
+  Toggle,
+  Icon,
+  Input,
+  Datepicker
+} from "react-native-ui-kitten"
+import Slider from "@react-native-community/slider"
+
+import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
+import { connect } from "react-redux"
+export class __Blank extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
-  render = () => (
-    <View style={styles.container}>
-      <Text>Welcome to Your Screen</Text>
-      <TextInput
-        onChange={email => this.setState({ email: email })}
-        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-      />
-      <TextInput
-        onChange={password => this.setState({ password: password })}
-        style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-      />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => this.props.register(this.state.email, this.state.password)}
-      >
-        <Text>Signup</Text>
-      </TouchableOpacity>
-    </View>
-  );
+  state = {}
+  render = () => <View style={this.props.themedStyle.View_1} />
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 16
-  },
-  button: {
-    alignItems: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10
+
+_Blank = withStyles(__Blank, theme => ({
+  View_1: {
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 0,
+    marginBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
+    overflow: "visible",
+    fontSize: 12,
+    color: "#000000",
+    backgroundColor: "#ffffff",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
+    alignItems: "stretch",
+    alignContent: "stretch",
+    borderColor: "#000000",
+    borderStyle: "solid",
+    borderWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
+    borderRadius: 0,
+    backgroundSize: "auto"
   }
-});
+}))
+
 function mapStateToProps(state) {
-  return { state: state };
+  return { state: state }
 }
-const mapDispatchToProps = dispatch => {
-  return {
-    register: (email, password) =>
-      dispatch(registrationandlogin_post_registration_read(email, password))
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Blank);
+const actionCreators = {}
+export default connect(mapStateToProps, actionCreators)(_Blank)
