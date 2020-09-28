@@ -22,7 +22,7 @@ export class __Blank extends React.Component {
   state = {}
   render = () => (
     <View style={this.props.themedStyle.View_1}>
-      <Text style={this.props.themedStyle.Text_3}>Charath Content 001</Text>
+      <Text style={this.props.themedStyle.Text_3}>Sample text content</Text>
     </View>
   )
 }
@@ -38,7 +38,7 @@ _Blank = withStyles(__Blank, theme => ({
     paddingTop: 0,
     paddingBottom: 0,
     overflow: "visible",
-    fontSize: 14,
+    fontSize: 12,
     color: "#000000",
     backgroundColor: "#ffffff",
     fontStyle: "normal",
