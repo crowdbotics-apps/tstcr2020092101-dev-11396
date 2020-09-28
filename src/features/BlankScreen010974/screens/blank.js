@@ -22,7 +22,7 @@ export class __Blank extends React.Component {
   state = {}
   render = () => (
     <View style={this.props.themedStyle.View_1}>
-      <Text style={this.props.themedStyle.Text_3}>Sample text content</Text>
+      <Text style={this.props.themedStyle.Text_3}>Charath Content 001</Text>
     </View>
   )
 }
