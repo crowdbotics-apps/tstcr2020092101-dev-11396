@@ -31,7 +31,7 @@ _Blank = withStyles(__Blank, theme => ({
     marginBottom: 0,
     paddingLeft: 0,
     paddingRight: 0,
-    paddingTop: 0,
+    paddingTop: 10,
     paddingBottom: 0,
     overflow: "visible",
     fontSize: 12,
